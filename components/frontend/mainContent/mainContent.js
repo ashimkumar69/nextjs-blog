@@ -52,22 +52,20 @@ const useStyles = makeStyles((theme) => ({
 function MainContent(props) {
   const classes = useStyles();
   return (
-    <div className={classes.mainContentWrapper}>
-      <Container maxWidth="xl">
-        <Grid container spacing={3}>
-          <Grid item md={2} className={classes.navMenuGrid}>
-            <div className={classes.navMenuWrapper}>
-              <NavMenu />
-            </div>
-          </Grid>
-          <Grid item xs={12} md={10}>
-            <div className={classes.blogWrapper}>
-              <Blog {...props} />
-            </div>
-          </Grid>
+    <Container maxWidth="xl">
+      <Grid container spacing={3}>
+        <Grid item md={2} className={classes.navMenuGrid}>
+          <div className={classes.navMenuWrapper}>
+            <NavMenu />
+          </div>
         </Grid>
-      </Container>
-    </div>
+        <Grid item xs={12} md={10}>
+          <div className={classes.blogWrapper}>
+            <Blog {...props} />
+          </div>
+        </Grid>
+      </Grid>
+    </Container>
   );
 }
 

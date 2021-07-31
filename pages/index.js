@@ -26,19 +26,26 @@ export default function Home(props) {
   );
 }
 
-export const getStaticProps = async (ctx) => {
+export async function getStaticProps(context) {
   const dataFilePath = path.join(
     process.cwd(),
     "jsonFiles",
     "../data-db/blogs.json"
   );
-  
+
   const fileContents = fs.readFileSync(dataFilePath, "utf8");
   const data = JSON.parse(fileContents);
+
+  if (!data) {
+    return {
+      notFound: true,
+    };
+  }
 
   return {
     props: {
       blogItems: data,
     },
+    revalidate: 10,
   };
-};
+}

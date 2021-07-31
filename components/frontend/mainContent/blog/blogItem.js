@@ -5,27 +5,12 @@ import Image from "next/image";
 import Link from "next/link";
 // material
 import { makeStyles } from "@material-ui/core/styles";
-import {
-  Box,
-  Card,
-  Chip,
-  Icon,
-  IconButton,
-  Typography,
-} from "@material-ui/core";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { Card, Chip, Icon, IconButton, Typography } from "@material-ui/core";
+
 // import
 import colorToRgba from "color-to-rgba";
 import { customTheme } from "theme/customTheme";
 import clsx from "clsx";
-
-const blogItem = {
-  image: "/images/blog/2.jpg",
-  category: "theory & practice",
-  title: "Mobile Photography Tips",
-  description: " How to take good photos with a phone",
-  path: "/",
-};
 
 const useStyles = makeStyles((theme) => ({
   card: {
@@ -132,14 +117,6 @@ let imageWH = {
 
 function BlogItem(props) {
   const classes = useStyles();
-
-  // const onlyXM = useMediaQuery("(max-width:599.95px)");
-  // if (onlyXM) {
-  //   imageWH = {
-  //     width: 320,
-  //     height: 240,
-  //   };
-  // }
 
   return (
     <Card elevation={0} className={classes.card}>
