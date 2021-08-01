@@ -7,20 +7,13 @@ import Link from "next/link";
 // material
 import { makeStyles } from "@material-ui/core/styles";
 
-import {
-  Box,
-  Grid,
-  Button,
-  Toolbar,
-  AppBar,
-  Container,
-} from "@material-ui/core";
+import { Grid, Button, Toolbar, AppBar, Container } from "@material-ui/core";
 
 // import
 import navbarLogo from "public/images/logo/1.png";
-import menuImage from "public/images/navbar/menu/1.png";
 import { customTheme } from "theme/customTheme";
 import colorToRgba from "color-to-rgba";
+import NavMenuSwipeableDrawer from "../navMenuSwipeableDrawer/navMenuSwipeableDrawer";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -60,12 +53,7 @@ const useStyles = makeStyles((theme) => ({
       borderColor: customTheme.palette.textWhite.primaryTextColor,
     },
   },
-  menuBtn: {
-    minWidth: theme.spacing(1),
-    "&:hover": {
-      backgroundColor: "transparent",
-    },
-  },
+
 }));
 
 export default function Navbar() {
@@ -104,13 +92,8 @@ export default function Navbar() {
               >
                 Sign Up
               </Button>
-              <Button
-                className={classes.menuBtn}
-                disableElevation
-                disableRipple
-              >
-                <Image src={menuImage} alt="Menu" width={7} height={26} />
-              </Button>
+     
+              <NavMenuSwipeableDrawer />
             </Grid>
           </Grid>
         </Toolbar>

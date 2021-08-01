@@ -100,11 +100,15 @@ const useStyles = makeStyles((theme) => ({
   icon: {
     fontSize: theme.spacing(2),
   },
-  category: {
+  categoryChip: (props) => ({
     color: customTheme.palette.textWhite.primaryTextColor,
-    backgroundColor: customTheme.palette.tealColor,
+    backgroundColor: props.setCategoryColor,
     borderRadius: theme.spacing(0.5),
-  },
+    "&:hover": {
+      backgroundColor: props.setCategoryColor,
+    },
+  }),
+
   img: {
     display: "block !important",
   },
@@ -116,7 +120,10 @@ let imageWH = {
 };
 
 function BlogItem(props) {
-  const classes = useStyles();
+  const styleProps = {
+    setCategoryColor: props.setcategorycolor,
+  };
+  const classes = useStyles(styleProps);
 
   return (
     <Card elevation={0} className={classes.card}>
@@ -134,7 +141,8 @@ function BlogItem(props) {
           <Chip
             label={props.item.category}
             size="small"
-            className={classes.category}
+            className={classes.categoryChip}
+            onClick={() => {}}
           />
 
           <div className={classes.cardBody}>

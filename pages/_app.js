@@ -26,7 +26,6 @@ function MyApp(props) {
 
   return (
     <React.Fragment>
-      <CssBaseline />
       <Head>
         <meta
           name="viewport"
@@ -43,6 +42,7 @@ function MyApp(props) {
       </Head>
 
       <ThemeProvider theme={customMuiTheme}>
+        <CssBaseline />
         <Component {...pageProps} />
       </ThemeProvider>
     </React.Fragment>

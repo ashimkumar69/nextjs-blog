@@ -7,6 +7,7 @@ export const customTheme = {
     redDeepColor: "#900c54",
     yellowColor: "#e0c016",
     greyColor: "#dddddd",
+    blackColor: "#0c0d0e",
     // text color
     textWhite: {
       primaryTextColor: "#fefefe",
