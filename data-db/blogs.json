@@ -4,16 +4,14 @@
     "category": "theory & practice",
     "title": "Mobile Photography Tips",
     "short_description": "How to take good photos with a phone",
-    "image": "/images/blog/1.jpg",
-    "path": "/"
+    "image": "/images/blog/1.jpg"
   },
   {
     "_id": "2",
     "category": "glostars community",
     "title": "Interview with José Luis Asensio Fierro",
     "short_description": "Interview with José Luis Asensio Fierro",
-    "image": "/images/blog/2.jpg",
-    "path": "/"
+    "image": "/images/blog/2.jpg"
   },
 
   {
@@ -21,8 +19,7 @@
     "category": "photography in covid",
     "title": "Photography & COVID. Story by Emelina Forsberg",
     "short_description": "How Covid has affected me and my photography",
-    "image": "/images/blog/3.jpg",
-    "path": "/"
+    "image": "/images/blog/3.jpg"
   },
 
   {
@@ -30,7 +27,6 @@
     "category": "theory & practices",
     "title": "Architecture Photography: Everything You Need To Know",
     "short_description": "How to capture structures like you own them",
-    "image": "/images/blog/4.jpeg",
-    "path": "/"
+    "image": "/images/blog/4.jpeg"
   }
 ]

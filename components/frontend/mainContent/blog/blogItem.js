@@ -3,6 +3,7 @@ import React from "react";
 // next
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 // material
 import { makeStyles } from "@material-ui/core/styles";
 import { Card, Chip, Icon, IconButton, Typography } from "@material-ui/core";
@@ -47,6 +48,8 @@ const useStyles = makeStyles((theme) => ({
 
   cardBody: {
     position: "absolute",
+    left: theme.spacing(1),
+    right: theme.spacing(1),
     bottom: theme.spacing(2),
   },
   action: {
@@ -68,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
   },
   body: {
     color: customTheme.palette.textWhite.primaryTextColor,
-
+    lineHeight: 1.25,
     maxWidth: "100%",
     overflow: "hidden",
     display: "-webkit-box",
@@ -124,6 +127,7 @@ function BlogItem(props) {
     setCategoryColor: props.setcategorycolor,
   };
   const classes = useStyles(styleProps);
+  const router = useRouter();
 
   return (
     <Card elevation={0} className={classes.card}>
@@ -142,37 +146,33 @@ function BlogItem(props) {
             label={props.item.category}
             size="small"
             className={classes.categoryChip}
-            onClick={() => {}}
+            onClick={() => router.push("/")}
           />
 
           <div className={classes.cardBody}>
-            <Link href={props.item.path}>
-              <a className={classes.titleAnchorLink}>
-                <Typography
-                  variant="subtitle1"
-                  component="h5"
-                  className={classes.title}
-                >
-                  {props.item.title}
-                </Typography>
-              </a>
-            </Link>
+            <Typography
+              variant="subtitle1"
+              component="h5"
+              className={classes.title}
+            >
+              <Link href="/">
+                <a className={classes.titleAnchorLink}>{props.item.title}</a>
+              </Link>
+            </Typography>
 
-            <Typography variant="body1" component="p" className={classes.body}>
+            <Typography variant="body2" component="p" className={classes.body}>
               {props.item.short_description}
             </Typography>
           </div>
 
           <div className={classes.action}>
-            <Link href={props.item.path}>
-              <a className={classes.anchorLink}>
-                <IconButton size="small" className={classes.iconBtn}>
-                  <Icon
-                    className={clsx(classes.icon, "fas fa-chevron-right")}
-                  />
-                </IconButton>
-              </a>
-            </Link>
+            <IconButton
+              size="small"
+              className={classes.iconBtn}
+              onClick={() => router.push("/")}
+            >
+              <Icon className={clsx(classes.icon, "fas fa-chevron-right")} />
+            </IconButton>
           </div>
         </div>
       </div>

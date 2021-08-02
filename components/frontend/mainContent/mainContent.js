@@ -19,7 +19,9 @@ const useStyles = makeStyles((theme) => ({
     scrollBehavior: "smooth",
     overscrollBehavior: "auto contain",
     marginBottom: "100px",
-
+    [theme.breakpoints.only("xs")]: {
+      paddingRight: theme.spacing(0.5),
+    },
     "&::-webkit-scrollbar": {
       width: theme.spacing(1),
     },
