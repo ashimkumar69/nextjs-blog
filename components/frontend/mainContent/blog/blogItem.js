@@ -12,11 +12,13 @@ import { Card, Chip, Icon, IconButton, Typography } from "@material-ui/core";
 import colorToRgba from "color-to-rgba";
 import { customTheme } from "theme/customTheme";
 import clsx from "clsx";
-
+import slugify from "slugify";
 const useStyles = makeStyles((theme) => ({
   card: {
     position: "relative",
+
     "& > div": {
+      // problem
       display: "block !important",
     },
     "& $img": {
@@ -155,7 +157,11 @@ function BlogItem(props) {
               component="h5"
               className={classes.title}
             >
-              <Link href="/">
+              <Link
+                href={`/blog/${encodeURIComponent(
+                  slugify(props.item.title, { strict: true })
+                )}`}
+              >
                 <a className={classes.titleAnchorLink}>{props.item.title}</a>
               </Link>
             </Typography>
@@ -169,7 +175,13 @@ function BlogItem(props) {
             <IconButton
               size="small"
               className={classes.iconBtn}
-              onClick={() => router.push("/")}
+              onClick={() =>
+                router.push(
+                  `/blog/${encodeURIComponent(
+                    slugify(props.item.title, { strict: true })
+                  )}`
+                )
+              }
             >
               <Icon className={clsx(classes.icon, "fas fa-chevron-right")} />
             </IconButton>

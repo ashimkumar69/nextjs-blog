@@ -58,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
     bottom: 0,
     padding: theme.spacing(1, 0),
     [theme.breakpoints.only("xs")]: {
-      position: "relative",
+      position: (props) => props.position ?? "relative",
     },
   },
   grid: {
@@ -88,8 +88,11 @@ const useStyles = makeStyles((theme) => ({
     display: "inline-block",
     marginRight: theme.spacing(2),
     padding: theme.spacing(1),
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.only("sm")]: {
       padding: theme.spacing(0.5),
+    },
+    [theme.breakpoints.only("xs")]: {
+      padding: theme.spacing(0),
     },
     verticalAlign: "middle",
     "&:last-child": {
@@ -115,8 +118,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Footer() {
-  const classes = useStyles();
+function Footer(props) {
+  const styleProps = {
+    position: props.position,
+  };
+  const classes = useStyles(styleProps);
   return (
     <div className={classes.footer}>
       <Container maxWidth="xl">

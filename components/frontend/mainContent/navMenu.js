@@ -55,7 +55,7 @@ function NavMenu() {
         </Link>
       </li>
       <li>
-        <Link href="/">
+        <Link href="/blog">
           <a className={classes.listItemLink}>
             <Typography
               variant="h6"

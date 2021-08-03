@@ -6,7 +6,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   bgRapper: {
-    backgroundImage: 'url("/images/background/1.png")',
+    backgroundImage: 'url("/images/background/1.jpg")',
     backgroundPosition: "center",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",

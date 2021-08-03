@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: "100px",
     [theme.breakpoints.only("xs")]: {
       paddingRight: theme.spacing(0.5),
+      marginBottom: "0px",
     },
     "&::-webkit-scrollbar": {
       width: theme.spacing(1),
