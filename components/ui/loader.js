@@ -2,32 +2,26 @@
 import React from "react";
 // material
 import { makeStyles } from "@material-ui/core/styles";
-import CircularProgress from "@material-ui/core/CircularProgress";
+import { Backdrop, CircularProgress } from "@material-ui/core";
+
 // import
 import { customTheme } from "theme/customTheme";
+import colorToRgba from "color-to-rgba";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    display: "flex",
-    width: "100%",
-    height: "100vh",
-    justifyContent: "center",
-    alignItems: "center",
-    "& > * + *": {
-      marginLeft: theme.spacing(2),
-    },
-  },
-  color: {
-    color: customTheme.palette.blueColor,
+  backdrop: {
+    zIndex: theme.zIndex.drawer + 1,
+    color: customTheme.palette.whiteColor,
+    backgroundColor: colorToRgba(customTheme.palette.blackColor, 0.9),
   },
 }));
 
-export default function Loader() {
+export default function Loader(props) {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <CircularProgress size={100} className={classes.color} />
-    </div>
+    <Backdrop className={classes.backdrop} open={props.isloading}>
+      <CircularProgress size={100} color="inherit" />
+    </Backdrop>
   );
 }

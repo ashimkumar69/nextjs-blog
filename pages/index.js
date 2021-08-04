@@ -7,7 +7,7 @@ import BgRapper from "components/frontend/bgRapper/bgRapper";
 import Footer from "components/frontend/footer/footer";
 import HeroBanner from "components/frontend/heroBanner/heroBanner";
 
-function Home() {
+function HomePage() {
   return (
     <BgRapper>
       <header>
@@ -23,4 +23,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomePage;

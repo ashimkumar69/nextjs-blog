@@ -10,6 +10,7 @@ import { Container, Grid, Typography } from "@material-ui/core";
 
 // import
 import { customTheme } from "theme/customTheme";
+import colorToRgba from "color-to-rgba";
 
 const socialIcons = [
   {
@@ -57,6 +58,10 @@ const useStyles = makeStyles((theme) => ({
     left: 0,
     bottom: 0,
     padding: theme.spacing(1, 0),
+    backgroundColor: (props) =>
+      props.bgColor
+        ? colorToRgba(customTheme.palette.blackColor, 0.2)
+        : "transparent",
     [theme.breakpoints.only("xs")]: {
       position: (props) => props.position ?? "relative",
     },
@@ -121,6 +126,7 @@ const useStyles = makeStyles((theme) => ({
 function Footer(props) {
   const styleProps = {
     position: props.position,
+    bgColor: props.bgcolor,
   };
   const classes = useStyles(styleProps);
   return (

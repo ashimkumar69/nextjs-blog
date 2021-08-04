@@ -9,15 +9,18 @@ import Navbar from "components/frontend/navbar/navbar";
 import BgRapper from "components/frontend/bgRapper/bgRapper";
 import Footer from "components/frontend/footer/footer";
 import MainContent from "components/frontend/mainContent/mainContent";
+import Blog from "components/frontend/mainContent/blog/blog";
 
-function Blog(props) {
+function BlogPage(props) {
   return (
     <BgRapper>
       <header>
         <Navbar />
       </header>
       <main>
-        <MainContent {...props} />
+        <MainContent>
+          <Blog {...props} />
+        </MainContent>
       </main>
       <footer>
         <Footer />
@@ -50,4 +53,4 @@ export async function getStaticProps(context) {
   };
 }
 
-export default Blog;
+export default BlogPage;
