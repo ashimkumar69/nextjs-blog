@@ -2,10 +2,11 @@
 import React from "react";
 // material
 import { makeStyles } from "@material-ui/core/styles";
-import { Button, Container, Grid, Typography } from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
 // import
 import { customTheme } from "theme/customTheme";
 import colorToRgba from "color-to-rgba";
+import CButton from "components/ui/cButton";
 
 const useStyles = makeStyles((theme) => ({
   box: {
@@ -37,11 +38,13 @@ const useStyles = makeStyles((theme) => ({
       fontSize: theme.spacing(2.5),
     },
   },
-  signUpBtn: {
+
+  heroBannerBtn: {
+    textDecoration: "none",
+    display: "inline-block",
     marginRight: theme.spacing(1),
     borderRadius: theme.spacing(2.25),
-    padding: theme.spacing(0.25),
-    width: theme.spacing(15),
+    padding: theme.spacing(0.75, 3),
     border: `${theme.spacing(0.25)}px solid  ${colorToRgba(
       customTheme.palette.textWhite.primaryTextColor,
       0.5
@@ -79,20 +82,12 @@ function HeroBanner() {
             Place of creativity, community &#38; challenge. Free. For everyone
           </Typography>
           <div className={classes.action}>
-            <Button
-              className={classes.signUpBtn}
-              disableElevation
-              disableRipple
-            >
+            <CButton componentas="a" href="/" className={classes.heroBannerBtn}>
               Join Now
-            </Button>
-            <Button
-              className={classes.signUpBtn}
-              disableElevation
-              disableRipple
-            >
+            </CButton>
+            <CButton componentas="a" href="/" className={classes.heroBannerBtn}>
               Install App
-            </Button>
+            </CButton>
           </div>
         </Grid>
       </Grid>
