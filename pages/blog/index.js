@@ -2,6 +2,7 @@
 import React from "react";
 
 // next
+import Head from "next/head";
 import path from "path";
 import fs from "fs";
 // import
@@ -13,19 +14,24 @@ import Blog from "components/frontend/mainContent/blog/blog";
 
 function BlogPage(props) {
   return (
-    <BgRapper>
-      <header>
-        <Navbar />
-      </header>
-      <main>
-        <MainContent>
-          <Blog {...props} />
-        </MainContent>
-      </main>
-      <footer>
-        <Footer />
-      </footer>
-    </BgRapper>
+    <React.Fragment>
+      <Head>
+        <title>Blog</title>
+      </Head>
+      <BgRapper>
+        <header>
+          <Navbar />
+        </header>
+        <main>
+          <MainContent>
+            <Blog {...props} />
+          </MainContent>
+        </main>
+        <footer>
+          <Footer />
+        </footer>
+      </BgRapper>
+    </React.Fragment>
   );
 }
 
