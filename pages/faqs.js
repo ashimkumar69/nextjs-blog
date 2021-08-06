@@ -15,7 +15,7 @@ function FaqsPage() {
   return (
     <React.Fragment>
       <Head>
-        <title>About</title>
+        <title>FAQs</title>
       </Head>
       <BgRapper>
         <header>
