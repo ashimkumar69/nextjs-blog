@@ -7,7 +7,6 @@ import { Container, Grid } from "@material-ui/core";
 // import
 import colorToRgba from "color-to-rgba";
 import { customTheme } from "theme/customTheme";
-// import Blog from "./blog/blog";
 import NavMenu from "./navMenu";
 
 const useStyles = makeStyles((theme) => ({
@@ -63,10 +62,7 @@ function MainContent(props) {
           </div>
         </Grid>
         <Grid item xs={12} md={10}>
-          <div className={classes.blogWrapper}>
-            {props.children}
-            {/* <Blog {...props} /> */}
-          </div>
+          <div className={classes.blogWrapper}>{props.children}</div>
         </Grid>
       </Grid>
     </Container>

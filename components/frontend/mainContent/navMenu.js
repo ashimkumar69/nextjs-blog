@@ -42,7 +42,7 @@ function NavMenu() {
   return (
     <ul className={classes.list}>
       <li>
-        <Link href="/">
+        <Link href="/about">
           <a className={classes.listItemLink}>
             <Typography
               variant="h6"
@@ -68,7 +68,7 @@ function NavMenu() {
         </Link>
       </li>
       <li>
-        <Link href="/">
+        <Link href="/faqs">
           <a className={classes.listItemLink}>
             <Typography
               variant="h6"
@@ -81,7 +81,6 @@ function NavMenu() {
         </Link>
       </li>
     </ul>
-  
   );
 }
 
